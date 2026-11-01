@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>运维提示板 · 轻量小工具</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>运维提示板</h1>
+      <p class="sub">纯前端本地小工具：记一条今日要点，按场景抽一条提示。数据只存在本机浏览器。</p>
+    </header>
+    <section class="card">
+      <label for="note">今日要点</label>
+      <textarea id="note" rows="3" placeholder="例如：今晚要核对备份任务是否成功"></textarea>
+      <div class="row">
+        <button id="save" type="button">保存到本机</button>
+        <button id="clear" type="button" class="ghost">清空</button>
+      </div>
+      <p id="savedHint" class="hint" hidden>已保存到 localStorage</p>
+    </section>
+    <section class="card">
+      <label for="scene">场景</label>
+      <select id="scene">
+        <option value="deploy">发布上线</option>
+        <option value="incident">故障排查</option>
+        <option value="cost">成本与资源</option>
+      </select>
+      <button id="draw" type="button">抽一条提示</button>
+      <blockquote id="tip" class="tip">点上面按钮开始</blockquote>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
